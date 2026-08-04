@@ -27,6 +27,7 @@ public class ModEnUsLangProvider extends FabricLanguageProvider {
 
         translationBuilder.add(ModItems.ANTHRACITE, "Anthracite");
 
+        translationBuilder.add(ModItems.PROSPECTOR, "Prospector");
 
         translationBuilder.add(ModBlocks.ICE_ETHER_BLOCK, "Ice Ether Block");
         translationBuilder.add(ModBlocks.RAW_ICE_ETHER_BLOCK, "Raw Ice Ether Block");
