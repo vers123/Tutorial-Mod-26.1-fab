@@ -1,0 +1,37 @@
+{
+	"schemaVersion": 1,
+	"id": "tutorial",
+	"version": "${version}",
+	"name": "Tutorial Mod",
+	"description": "描述",
+	"authors": [
+		"LingLan"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/tutorial/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.linglan.tutorial.TutorialMod"
+		],
+		"fabric-datagen": [
+			"com.linglan.tutorial.TutorialModDataGenerator"
+		],
+		"client": [
+			"com.linglan.tutorial.TutorialModClient"
+		]
+	},
+	"mixins": [
+		"tutorial.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.19.3",
+		"minecraft": "~26.1",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}
