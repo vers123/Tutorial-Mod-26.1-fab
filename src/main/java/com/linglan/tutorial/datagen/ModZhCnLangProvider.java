@@ -1,5 +1,6 @@
 package com.linglan.tutorial.datagen;
 
+import com.linglan.tutorial.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.minecraft.core.HolderLookup;
@@ -13,6 +14,6 @@ public class ModZhCnLangProvider extends FabricLanguageProvider {
 
     @Override
     public void generateTranslations(HolderLookup.Provider registryLookup, TranslationBuilder translationBuilder) {
-
+        translationBuilder.add(ModItems.LINGLAN, "昤兰");
     }
 }

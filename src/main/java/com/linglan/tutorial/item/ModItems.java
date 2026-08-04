@@ -14,6 +14,8 @@ import net.minecraft.world.item.Item;
 import java.util.function.Function;
 
 public class ModItems {
+    public static final Item LINGLAN = registerItem("linglan");
+
     public static final Item ICE_ETHER = registerItem("ice_ether");
     public static final Item RAW_ICE_ETHER = registerItem("raw_ice_ether");
     public static final Item CARDBOARD = registerItem("material/cardboard");

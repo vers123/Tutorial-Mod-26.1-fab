@@ -15,6 +15,8 @@ public class ModEnUsLangProvider extends FabricLanguageProvider {
 
     @Override
     public void generateTranslations(HolderLookup.Provider registryLookup, TranslationBuilder translationBuilder) {
+        translationBuilder.add(ModItems.LINGLAN, "LingLan");
+
         translationBuilder.add(ModItems.ICE_ETHER, "Ice Ether");
         translationBuilder.add(ModItems.RAW_ICE_ETHER, "Raw Ice Ether");
         translationBuilder.add(ModItems.CARDBOARD, "Cardboard");
