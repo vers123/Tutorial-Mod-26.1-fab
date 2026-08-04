@@ -1,4 +1,5 @@
 {
+  "block.tutorial.corn": "Corn",
   "block.tutorial.ice_ether_block": "Ice Ether Block",
   "block.tutorial.ice_ether_button": "Ice Ether Button",
   "block.tutorial.ice_ether_door": "Ice Ether Door",
@@ -14,7 +15,6 @@
   "block.tutorial.strawberry_seeds": "Strawberry Seeds",
   "item.tutorial.anthracite": "Anthracite",
   "item.tutorial.cheese": "Cheese",
-  "item.tutorial.corn": "Corn",
   "item.tutorial.example_item": "Example Item",
   "item.tutorial.fire_ether": "Fire Ether",
   "item.tutorial.fire_ether_axe": "Fire Ether Axe",

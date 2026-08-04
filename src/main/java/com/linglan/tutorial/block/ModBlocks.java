@@ -1,6 +1,7 @@
 package com.linglan.tutorial.block;
 
 import com.linglan.tutorial.TutorialMod;
+import com.linglan.tutorial.block.custom.CornCrop;
 import com.linglan.tutorial.block.custom.StrawberryCrop;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -45,6 +46,14 @@ public class ModBlocks {
             BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_TRAPDOOR), true);
 
     public static final Block STRAWBERRY_CROP = register("strawberry_crop", StrawberryCrop::new,
+            BlockBehaviour.Properties.of()
+                    .noCollision()
+                    .randomTicks()
+                    .instabreak()
+                    .sound(SoundType.CROP)
+                    .pushReaction(PushReaction.DESTROY), false);
+
+    public static final Block CORN_CROP = register("corn_crop", CornCrop::new,
             BlockBehaviour.Properties.of()
                     .noCollision()
                     .randomTicks()
