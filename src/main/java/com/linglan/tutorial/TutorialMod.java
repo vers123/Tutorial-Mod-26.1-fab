@@ -3,6 +3,7 @@ package com.linglan.tutorial;
 import com.linglan.tutorial.block.ModBlocks;
 import com.linglan.tutorial.item.ModCreativeModeTabs;
 import com.linglan.tutorial.item.ModItems;
+import com.linglan.tutorial.util.ModArmorEffects;
 import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.registry.FuelValueEvents;
@@ -33,6 +34,8 @@ public class TutorialMod implements ModInitializer {
 			builder.add(ModItems.ANTHRACITE, 1600);
 			builder.add(ModItems.CARDBOARD, 300);
 		});
+
+		ModArmorEffects.register();
 
 		LOGGER.info("Hello Fabric world!");
 	}
