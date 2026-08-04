@@ -1,5 +1,6 @@
 package com.linglan.tutorial.item.custom;
 
+import com.linglan.tutorial.tag.ModBlockTags;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
@@ -9,7 +10,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class ProspectorItem extends Item {
@@ -34,7 +34,9 @@ public class ProspectorItem extends Item {
                             String name = blockState.getBlock().getName().getString();
 
                             if (isCorrectToolForDrops(blockState)) {
-                                player.sendSystemMessage(Component.literal("Found " + name + "!"));
+                                if (player != null) {
+                                    player.sendSystemMessage(Component.literal("Found " + name + "!"));
+                                }
                                 found = true;
                                 break;
                             }
@@ -48,22 +50,28 @@ public class ProspectorItem extends Item {
                     String name = blockState.getBlock().getName().getString();
 
                     if (isCorrectToolForDrops(blockState)) {
-                        player.sendSystemMessage(Component.literal("Found " + name + "!"));
+                        if (player != null) {
+                            player.sendSystemMessage(Component.literal("Found " + name + "!"));
+                        }
                         found = true;
                         break;
                     }
                 }
             }
             if (!found) {
-                player.sendSystemMessage(Component.literal("No ore found!"));
+                if (player != null) {
+                    player.sendSystemMessage(Component.literal("No ore found!"));
+                }
             }
-            context.getItemInHand().hurtAndBreak(1, player, EquipmentSlot.MAINHAND);
+            if (player != null) {
+                context.getItemInHand().hurtAndBreak(1, player, EquipmentSlot.MAINHAND);
+            }
             return InteractionResult.SUCCESS;
         }
         return InteractionResult.PASS;
     }
 
     private boolean isCorrectToolForDrops(BlockState blockState) {
-        return blockState.is(Blocks.DIAMOND_ORE) || blockState.is(Blocks.DEEPSLATE_DIAMOND_ORE);
+        return blockState.is(ModBlockTags.ORE_TAGS);
     }
 }

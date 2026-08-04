@@ -2,6 +2,7 @@ package com.linglan.tutorial.datagen;
 
 import com.linglan.tutorial.block.ModBlocks;
 import com.linglan.tutorial.item.ModItems;
+import com.linglan.tutorial.tag.ModItemTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.core.HolderLookup;
@@ -38,8 +39,8 @@ public class ModRecipesProvider extends FabricRecipeProvider {
 
                 shaped(RecipeCategory.MISC, Items.SUGAR, 3)
                         .pattern("###")
-                        .define('#', Items.BEETROOT)
-                        .unlockedBy("has_item", has(Items.BEETROOT))
+                        .define('#', ModItemTags.SUGAR_TAG)
+                        .unlockedBy("has_item", has(ModItemTags.SUGAR_TAG))
                         .save(output);
                 shapeless(RecipeCategory.BUILDING_BLOCKS, ModBlocks.ICE_ETHER_ORE)
                         .requires(ModItems.RAW_ICE_ETHER)
