@@ -1,9 +1,11 @@
 package com.linglan.tutorial.datagen;
 
 import com.linglan.tutorial.block.ModBlocks;
+import com.linglan.tutorial.block.custom.StrawberryCrop;
 import com.linglan.tutorial.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootSubProvider;
+import net.minecraft.advancements.criterion.StatePropertiesPredicate;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.Item;
@@ -15,6 +17,8 @@ import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
+import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
+import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 
 import java.util.concurrent.CompletableFuture;
@@ -39,6 +43,10 @@ public class ModBlockLootTablesProvider extends FabricBlockLootSubProvider {
         dropSelf(ModBlocks.ICE_ETHER_WALL);
         add(ModBlocks.ICE_ETHER_DOOR, createDoorTable(ModBlocks.ICE_ETHER_DOOR));
         dropSelf(ModBlocks.ICE_ETHER_TRAPDOOR);
+
+        LootItemCondition.Builder isStrawberryMaxAge = LootItemBlockStatePropertyCondition.hasBlockStateProperties(ModBlocks.STRAWBERRY_CROP)
+                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(StrawberryCrop.AGE, 5));
+        add(ModBlocks.STRAWBERRY_CROP, createCropDrops(ModBlocks.STRAWBERRY_CROP, ModItems.STRAWBERRY, ModItems.STRAWBERRY_SEEDS, isStrawberryMaxAge));
     }
 
     public LootTable.Builder createCopperOreLikeDrops(final Block block, Item item) {

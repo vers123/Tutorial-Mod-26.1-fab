@@ -1,6 +1,7 @@
 package com.linglan.tutorial.item;
 
 import com.linglan.tutorial.TutorialMod;
+import com.linglan.tutorial.block.ModBlocks;
 import com.linglan.tutorial.item.custom.PickaxeItem;
 import com.linglan.tutorial.item.custom.ProspectorItem;
 import com.linglan.tutorial.tag.ModBlockTags;
@@ -56,6 +57,9 @@ public class ModItems {
             new Item.Properties().humanoidArmor(ModArmorMaterials.ICE_ETHER, ArmorType.LEGGINGS));
     public static final Item ICE_ETHER_BOOTS = registerItem("ice_ether_boots", Item::new,
             new Item.Properties().humanoidArmor(ModArmorMaterials.ICE_ETHER, ArmorType.BOOTS));
+
+    public static final Item STRAWBERRY_SEEDS = registerItem("strawberry_seeds",
+            p -> new BlockItem(ModBlocks.STRAWBERRY_CROP, p.useBlockDescriptionPrefix()));
 
     private static Item registerItem(final String name, final Function<Item.Properties, Item> itemFactory, final Item.Properties properties) {
         ResourceKey<Item> key = ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(TutorialMod.MOD_ID, name));
