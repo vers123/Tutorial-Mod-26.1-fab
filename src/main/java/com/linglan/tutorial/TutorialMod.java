@@ -1,5 +1,6 @@
 package com.linglan.tutorial;
 
+import com.linglan.tutorial.block.ModBlocks;
 import com.linglan.tutorial.item.ModCreativeModeTabs;
 import com.linglan.tutorial.item.ModItems;
 import net.fabricmc.api.ModInitializer;
@@ -24,6 +25,7 @@ public class TutorialMod implements ModInitializer {
 		// Proceed with mild caution.
 
 		ModItems.register();
+		ModBlocks.register();
 		ModCreativeModeTabs.register();
 
 		LOGGER.info("Hello Fabric world!");
