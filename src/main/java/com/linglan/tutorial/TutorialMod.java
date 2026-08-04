@@ -5,6 +5,7 @@ import com.linglan.tutorial.item.ModCreativeModeTabs;
 import com.linglan.tutorial.item.ModItems;
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.registry.FuelValueEvents;
 import net.minecraft.resources.Identifier;
 
 import org.slf4j.Logger;
@@ -27,6 +28,11 @@ public class TutorialMod implements ModInitializer {
 		ModItems.register();
 		ModBlocks.register();
 		ModCreativeModeTabs.register();
+
+		FuelValueEvents.BUILD.register((builder, context) -> {
+			builder.add(ModItems.ANTHRACITE, 1600);
+			builder.add(ModItems.CARDBOARD, 300);
+		});
 
 		LOGGER.info("Hello Fabric world!");
 	}
