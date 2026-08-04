@@ -1,5 +1,6 @@
 package com.linglan.tutorial;
 
+import com.linglan.tutorial.item.ModItems;
 import net.fabricmc.api.ModInitializer;
 
 import net.minecraft.resources.Identifier;
@@ -20,6 +21,8 @@ public class TutorialMod implements ModInitializer {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
+
+		ModItems.register();
 
 		LOGGER.info("Hello Fabric world!");
 	}
